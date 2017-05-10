@@ -17,7 +17,7 @@ const webpackConfig = {
   devtool : project.compiler_devtool,
   resolve : {
     root       : project.paths.client(),
-    extensions : ['', '.js', '.jsx', '.json']
+    extensions : ['', '.js', '.jsx', '.json', '.rt']
   },
   module : {}
 }
@@ -127,6 +127,14 @@ webpackConfig.module.loaders = [{
   test   : /\.json$/,
   loader : 'json'
 }]
+
+// JavaScript / React Templates
+// {test: /\.rt$/, loaders: ['react-templates-loader?targetVersion=0.14.0'], include: path.join(__dirname, 'src')}
+webpackConfig.module.loaders.push({
+  test    : /\.rt$/,
+  exclude : /node_modules/,
+  loader  : 'react-templates-loader?modules=commonjs'
+})
 
 // ------------------------------------
 // Style Loaders

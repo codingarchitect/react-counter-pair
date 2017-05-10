@@ -1,0 +1,7 @@
+<rt-import name="default" as="Header"  from="../../components/Header" />
+<div class="container text-center" rt-stateless>
+  <Header />
+  <div class="core-layout__viewport">
+    {props.children}
+  </div>
+</div>

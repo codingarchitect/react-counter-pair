@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { browserHistory, Router } from 'react-router'
-import { Provider } from 'react-redux'
+// import { browserHistory, Router } from 'react-router'
+// import { Provider } from 'react-redux'
+import template from './app-container.rt';
 
 class AppContainer extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class AppContainer extends Component {
     return false
   }
 
-  render () {
+  /*render () {
     const { routes, store } = this.props
 
     return (
@@ -23,7 +24,9 @@ class AppContainer extends Component {
         </div>
       </Provider>
     )
-  }
+  }*/
 }
+
+AppContainer.prototype.render = template;
 
 export default AppContainer

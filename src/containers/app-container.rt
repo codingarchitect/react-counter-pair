@@ -1,0 +1,8 @@
+<rt-import name="Provider" from="react-redux" />
+<rt-import name="browserHistory" from="react-router" />
+<rt-import name="Router" from="react-router" />
+<Provider store="{this.props.store}">
+  <div style="height: 100%">
+   <Router history="{browserHistory}" children="{this.props.routes}" />
+  </div>
+</Provider>

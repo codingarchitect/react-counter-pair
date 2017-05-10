@@ -1,0 +1,7 @@
+<div rt-stateless>
+  <h4>Welcome!</h4>
+  <img
+    alt="This is a duck, because Redux!"
+    class="duck"
+    src="{props.DuckImage}" />
+</div>

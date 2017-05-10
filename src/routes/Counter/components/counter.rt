@@ -1,0 +1,10 @@
+<div style="margin: 0 auto" rt-stateless>
+  <h2>Counter Value: {props.counter}</h2>
+  <button class="btn btn-default" onClick="{props.increment}">
+    Increment
+  </button>
+  {' '}
+  <button class="btn btn-default" onClick="{props.doubleAsync}">
+    Double (Async)
+  </button>
+</div>

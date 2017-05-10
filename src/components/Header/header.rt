@@ -1,0 +1,16 @@
+<rt-import name="IndexLink" from="react-router" />
+<rt-import name="Link" from="react-router" />
+<div rt-stateless>
+  <h1>React Redux Starter Kit</h1>
+  <IndexLink to="/" activeClassName="route--active">
+    Home
+  </IndexLink>
+  {' · '}
+  <Link to="/counter" activeClassName="route--active">
+    Counter
+  </Link>
+  {' · '}
+  <Link to="/greeter" activeClassName="route--active">
+    Greeter
+  </Link>
+</div>
