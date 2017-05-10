@@ -1,11 +1,12 @@
 import React from 'react'
+
 import PropTypes from 'prop-types'
 import Counter from './counter.rt';
 
 Counter.propTypes = {
-  counter     : PropTypes.number.isRequired,
-  doubleAsync : PropTypes.func.isRequired,
-  increment   : PropTypes.func.isRequired
+  value         : PropTypes.number.isRequired,
+  onIncrement   : PropTypes.func.isRequired,
+  onDecrement   : PropTypes.func.isRequired
 }
 
-export default Counter
+export default Counter;

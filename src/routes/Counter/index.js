@@ -13,6 +13,7 @@ export default (store) => ({
       const reducer = require('./modules/counter').default
 
       /*  Add the reducer to the store on key 'counter'  */
+      debugger;
       injectReducer(store, { key: 'counter', reducer })
 
       /*  Return getComponent   */
