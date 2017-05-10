@@ -1,0 +1,15 @@
+<rt-import name="default" as="InstantiableCounter" from="./InstantiableCounter" />
+<rt-import name="*" as="Constants" from="./InstantiableCounter" />
+<div rt-stateless>
+  <span>Counter1</span>
+  <InstantiableCounter
+    selector="{Constants.counter1Selector}"
+    wrapper="{Constants.counter1Wrapper}"
+  />
+  <span>Counter2</span>
+  <InstantiableCounter
+    selector="{Constants.counter2Selector}"
+    wrapper="{Constants.counter2Wrapper}"
+  />
+  <br />  
+</div>

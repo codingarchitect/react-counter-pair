@@ -8,9 +8,12 @@ import Counter from '../components/Counter'
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-const mapStateToProps = (state) => ({
-  value: state.counter
-});
+const mapStateToProps = (state) => {
+  if (!state) return ({ value: 0})
+  return ({
+    value: state.counter
+  })
+};
 
 const mapDispatchToProps = (dispatch) => ({
   onIncrement: () => dispatch(increment()),

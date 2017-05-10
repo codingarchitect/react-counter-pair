@@ -1,7 +1,7 @@
 <rt-import name="IndexLink" from="react-router" />
 <rt-import name="Link" from="react-router" />
 <div rt-stateless>
-  <h1>React Redux Starter Kit</h1>
+  <h1>React Redux Using <a href="https://wix.github.io/react-templates/">React Templates</a></h1>
   <IndexLink to="/" activeClassName="route--active">
     Home
   </IndexLink>
@@ -12,5 +12,9 @@
   {' · '}
   <Link to="/greeter" activeClassName="route--active">
     Greeter
+  </Link>
+  {' · '}
+  <Link to="/counter-pair" activeClassName="route--active">
+    Counter Pair (Elm Style)
   </Link>
 </div>

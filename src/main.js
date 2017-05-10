@@ -7,7 +7,6 @@ import AppContainer from './containers/AppContainer'
 // Store Instantiation
 // ========================================================
 const initialState = window.__INITIAL_STATE__
-debugger;
 const store = createStore(initialState)
 
 // ========================================================
