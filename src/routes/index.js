@@ -1,9 +1,10 @@
 // We only need to import the modules necessary for initial render
-import CoreLayout from '../layouts/CoreLayout'
-import Home from './Home'
+import CoreLayout   from '../layouts/CoreLayout'
+import Home         from './Home'
 import CounterRoute from './Counter'
 import GreeterRoute from './Greeter'
-import CounterPair from './CounterPair'
+import CounterPair  from './CounterPair'
+import Soe          from './Customisable'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -15,7 +16,8 @@ export const createRoutes = (store) => ({
   childRoutes : [
     CounterRoute(store),
     GreeterRoute,
-    CounterPair(store)
+    CounterPair(store),
+    Soe(store)
   ]
 })
 

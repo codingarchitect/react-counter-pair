@@ -2,6 +2,7 @@
 <rt-import name="Link" from="react-router" />
 <div rt-stateless>
   <h1>React Redux Using <a href="https://wix.github.io/react-templates/">React Templates</a></h1>
+  <h5>(HTML Templates as opposed to jsx or tsx style templates)</h5>
   <IndexLink to="/" activeClassName="route--active">
     Home
   </IndexLink>
@@ -16,5 +17,9 @@
   {' · '}
   <Link to="/counter-pair" activeClassName="route--active">
     Counter Pair (Elm Style)
+  </Link>
+  {' · '}
+  <Link to="/customisable" activeClassName="route--active">
+    Soe (Plugin Style)
   </Link>
 </div>
