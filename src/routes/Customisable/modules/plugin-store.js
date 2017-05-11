@@ -101,7 +101,6 @@ export default function pluginReducer(state = {}, action) {
 function requireAllPlugins(r) { 
   var plugins = [];
   r.keys().forEach((key) => {
-    debugger;
     const pluginModule = r(key)
     const pluginMetadata = pluginModule.pluginMetadata
     const pluginComponent = pluginModule.default
