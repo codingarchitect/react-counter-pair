@@ -15,7 +15,7 @@ const extensibleComponent = function (ComponentToExtend, pluginName, LayoutPlugi
         name: pluginName
       }
       return (
-        <div className="extensibleWrapper">
+        <div className="plugin-items">
           <ComponentToExtend {...this.props} />
           <LayoutPluginRenderer {...this.props} {...newProps} />
         </div>

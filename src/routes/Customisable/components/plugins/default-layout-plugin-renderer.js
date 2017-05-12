@@ -13,8 +13,8 @@ const DefaultLayoutPluginRenderer = function(props, context) {
         }
         let PluginElem = plugin.pluginComponent; 
         return (
-          <div>
-            <PluginElem {...props} {...newProps}/>
+          <div className="plugin-item" key={i}>
+            <PluginElem />
           </div>
         )
       })

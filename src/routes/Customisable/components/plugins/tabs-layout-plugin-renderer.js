@@ -9,16 +9,10 @@ const TabsLayoutPluginRenderer = function(props, context) {
     let renderedPlugins = plugins
       .filter((plugin, i) => thisPluginState.childPluginNames.find((childName) => childName === plugin.pluginMetadata.name))
       .map((plugin, i) => {
-        let newProps = { 
-          plugin,
-          key: plugin.pluginMetadata.name,
-          eventKey: i,
-          title: plugin.pluginMetadata.displayName
-        }
         let PluginElem = plugin.pluginComponent; 
         return (
-          <Tab {...props} {...newProps}>
-            <PluginElem {...props} {...newProps}/>
+          <Tab title={plugin.pluginMetadata.displayName} key={i} eventKey={i}>
+            <PluginElem />
           </Tab>
         )
       })
