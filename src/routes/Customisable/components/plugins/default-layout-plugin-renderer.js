@@ -1,15 +1,22 @@
-import React from 'react';
-// import { plugins } from '../../modules/plugin-store';
+import React from 'react'
 
-const PluginRenderer = (props, context) => {
+const DefaultLayoutPluginRenderer = function(props, context) {
   const plugins = require('../../modules/plugin-store').plugins    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];
     let renderedPlugins = plugins
       .filter((plugin, i) => thisPluginState.childPluginNames.find((childName) => childName === plugin.pluginMetadata.name))
       .map((plugin, i) => {
-        let PluginElem = plugin.pluginComponent;
-        return <PluginElem key={plugin.pluginMetadata.name} />
+        let newProps = { 
+          plugin,
+          key: i
+        }
+        let PluginElem = plugin.pluginComponent; 
+        return (
+          <div>
+            <PluginElem {...props} {...newProps}/>
+          </div>
+        )
       })
     return (
       <div>
@@ -19,10 +26,10 @@ const PluginRenderer = (props, context) => {
   }  else {
     return (
       <div>
-        Plugin {props.name}
+        Plugin Error {props.name}
       </div>
     )
   }
 };
 
-export default PluginRenderer;
+export default DefaultLayoutPluginRenderer;

@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PluginRenderer from './plugin-renderer'
 
 const mapStateToProps = (state) => {
   if (!state) return ({ pluginState: {} })
@@ -9,7 +8,7 @@ const mapStateToProps = (state) => {
   })
 };
 
-const extensibleComponent = function (ComponentToExtend, pluginName) {
+const extensibleComponent = function (ComponentToExtend, pluginName, LayoutPluginRenderer) {
   class ExtensibleComponentPP extends React.Component {
     render() {
       const newProps = {
@@ -18,7 +17,7 @@ const extensibleComponent = function (ComponentToExtend, pluginName) {
       return (
         <div className="extensibleWrapper">
           <ComponentToExtend {...this.props} />
-          <PluginRenderer {...this.props} {...newProps} />
+          <LayoutPluginRenderer {...this.props} {...newProps} />
         </div>
       )
     }

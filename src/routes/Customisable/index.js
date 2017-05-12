@@ -9,8 +9,7 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Soe = require('./components/plugins/soe/soe.container.plugin').default
-      const pluginRenderModule = require('./components/plugins/plugin-renderer')
+      const Soe = require('./components/plugins/soe/soe.container.plugin').default      
       const pluginStoreModule = require('./modules/plugin-store')
       const reducer = pluginStoreModule.default
       const registerAllPlugins = pluginStoreModule.registerAllPlugins

@@ -4,6 +4,7 @@ import MatrixProducts from './matrix-products.rt'
 
 export const pluginMetadata = { 
   name              : "react-counter/soe/items/matrix-products",
+  displayName       : 'Matrix Products',
   sequence          : 5,
   active            : true,
   childPluginNames : [] 
