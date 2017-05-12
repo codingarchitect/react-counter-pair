@@ -19,7 +19,7 @@ const DefaultLayoutPluginRenderer = function(props, context) {
         )
       })
     return (
-      <div>
+      <div className="plugin-items">
         { renderedPlugins }
       </div>
     )

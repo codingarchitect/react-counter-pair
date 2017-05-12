@@ -2,7 +2,6 @@ import React from 'react'
 import { Tabs, Tab } from 'react-bootstrap'
 
 const TabsLayoutPluginRenderer = function(props, context) {
-  debugger;
   const plugins = require('../../modules/plugin-store').plugins    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];
