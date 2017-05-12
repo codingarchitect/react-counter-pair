@@ -1,5 +1,3 @@
-<rt-import name="default" as="PluginRenderer" from="../plugin-renderer" />
 <div rt-stateless>
   <h3>Items</h3>
-  <PluginRenderer name="react-counter/soe/items" pluginState="{props.pluginState}" />
 </div>

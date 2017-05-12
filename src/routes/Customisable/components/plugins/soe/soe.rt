@@ -1,5 +1,3 @@
-<rt-import name="default" as="PluginRenderer" from="../plugin-renderer" />
 <div rt-stateless>
   <h2>Sales Order Entry</h2>
-  <PluginRenderer name="react-counter/soe/soe" pluginState="{props.pluginState}" />
 </div>

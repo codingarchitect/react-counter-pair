@@ -2,9 +2,7 @@ import React from 'react';
 // import { plugins } from '../../modules/plugin-store';
 
 const PluginRenderer = (props, context) => {
-  const plugins = require('../../modules/plugin-store').plugins
-  debugger;
-    
+  const plugins = require('../../modules/plugin-store').plugins    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];
     let renderedPlugins = plugins
