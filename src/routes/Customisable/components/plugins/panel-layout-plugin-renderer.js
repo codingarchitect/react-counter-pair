@@ -1,7 +1,7 @@
 import React from 'react'
-import { Tabs, Tab } from 'react-bootstrap'
+import { Panel } from 'react-bootstrap'
 
-const TabsLayoutPluginRenderer = function(props, context) {
+const PanelLayoutPluginRenderer = function(props, context) {
   const plugins = require('../../modules/plugin-store').plugins    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];
@@ -10,15 +10,15 @@ const TabsLayoutPluginRenderer = function(props, context) {
       .map((plugin, i) => {
         let PluginElem = plugin.pluginComponent; 
         return (
-          <Tab title={plugin.pluginMetadata.displayName} key={i} eventKey={i}>
+          <Panel header={plugin.pluginMetadata.displayName} key={i} eventKey={i} bsStyle="primary">
             <PluginElem />
-          </Tab>
+          </Panel>
         )
       })
     return (
-      <Tabs id={props.name} bsStyle="tabs">
+      <div>
         { renderedPlugins }
-      </Tabs>
+      </div>
     )
   }  else {
     return (
@@ -29,4 +29,4 @@ const TabsLayoutPluginRenderer = function(props, context) {
   }
 };
 
-export default TabsLayoutPluginRenderer;
+export default PanelLayoutPluginRenderer;

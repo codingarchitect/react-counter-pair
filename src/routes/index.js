@@ -5,6 +5,7 @@ import CounterRoute from './Counter'
 import GreeterRoute from './Greeter'
 import CounterPair  from './CounterPair'
 import Soe          from './Customisable'
+import Address      from './Address'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -17,7 +18,8 @@ export const createRoutes = (store) => ({
     CounterRoute(store),
     GreeterRoute,
     CounterPair(store),
-    Soe(store)
+    Soe(store),
+    Address
   ]
 })
 

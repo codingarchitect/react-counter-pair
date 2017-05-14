@@ -22,4 +22,8 @@
   <Link to="/customisable" activeClassName="route--active">
     Soe (Plugin Style)
   </Link>
+  {' · '}
+  <Link to="/address" activeClassName="route--active">
+    Address
+  </Link>
 </div>
