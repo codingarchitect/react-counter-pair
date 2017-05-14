@@ -2,7 +2,6 @@ import React from 'react'
 import { Panel } from 'react-bootstrap'
 
 const PanelLayoutPluginRenderer = function(props, context) {
-  console.log(props);
   const plugins = require('../../modules/plugin-store').plugins    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];

@@ -8,12 +8,13 @@ const mapStateToProps = (state) => {
   })
 };
 
-const extensibleComponent = function (ComponentToExtend, pluginName, LayoutPluginRenderer) {
+const extensibleComponent = function (ComponentToExtend, pluginName, LayoutPluginRenderer, formControls) {
   class ExtensibleComponentPP extends React.Component {
     render() {
       const newProps = {
-        name: pluginName
-      }
+        name: pluginName,
+        formControls
+      }      
       return (        
         <div>
           <ComponentToExtend {...this.props} />

@@ -1,0 +1,5 @@
+<rt-import name="*" as="RB" from="react-bootstrap" />
+<RB.FormGroup controlId="formInlineCustomField1">
+  <RB.ControlLabel>Custom</RB.ControlLabel>
+  <RB.FormControl type="text" placeholder="Custom" />
+</RB.FormGroup>

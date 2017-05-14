@@ -2,6 +2,7 @@ import React from 'react'
 import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 import InvoiceAddress from './invoice-address.rt'
 import extensibleComponent from '../extensible-component'
+import FormLayoutPluginRenderer from '../form-layout-plugin-renderer'
 
 const addressForm = {
   Address1: (props) => (<FormGroup controlId="formInlineAddress1">
@@ -46,64 +47,4 @@ export const pluginMetadata = {
   childPluginNames : [] 
 }
 
-const pluginsInThisTemplate = [];
-const childPluginNamesInThisTemplate = [];
-const pluginLinks = [];
-const parentPluginName = pluginMetadata.name;
-Object.keys(addressForm).map((key, index) => { 
-  const childPluginName = parentPluginName + '/' + key;
-  pluginsInThisTemplate.push({
-    pluginMetadata: {
-      name              : childPluginName,
-      displayName       : key,
-      sequence          : index,
-      active            : true,
-      childPluginNames  : [] 
-    },
-    pluginComponent: addressForm[key]
-  });
-  pluginLinks.push({ 
-    parentName        : parentPluginName,
-    childName         : childPluginName
-  });  
-  childPluginNamesInThisTemplate.push(childPluginName);
-})
-
-const render = function(props) {
-  var pluginsModule = require('../../../modules/plugin-store');
-  var registerPlugin = pluginsModule.registerPlugin;
-  var registerAsChildPlugin = pluginsModule.registerAsChildPlugin;
-  registerPlugins(props.dispatch, registerPlugin, registerAsChildPlugin);
-  if (props.pluginState && props.name) {
-    const thisPluginState = props.pluginState[props.name];
-    let renderedPlugins = pluginsInThisTemplate
-      .map((plugin, i) => {
-        let PluginElem = plugin.pluginComponent; 
-        return (
-          <PluginElem key={i}/>          
-        )
-      })
-    return (
-      <Form inline>
-        { renderedPlugins }
-      </Form>
-    )
-  }  else {
-    return (
-      <div>
-        Plugin {props.name}
-      </div>
-    )
-  }
-};
-
-function registerPlugins(dispatch, registerPlugin, registerAsChildPlugin) {
-  debugger;
-  if (!render.pluginsRegistered) {
-    pluginsInThisTemplate.forEach((plugin) => dispatch(registerPlugin(plugin.pluginMetadata)));
-    pluginLinks.forEach((link) => dispatch(registerAsChildPlugin(link.parentName, link.childName)));
-    render.pluginsRegistered = true;
-  }
-}
-
-export default extensibleComponent(InvoiceAddress, pluginMetadata.name, render);
+export default extensibleComponent(InvoiceAddress, pluginMetadata.name, FormLayoutPluginRenderer, addressForm);
