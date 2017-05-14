@@ -1,9 +1,9 @@
 import React from 'react'
-import { Panel } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
-const PanelLayoutPluginRenderer = function(props, context) {
-  console.log(props);
-  const plugins = require('../../modules/plugin-store').plugins    
+const FormLayoutPluginRenderer = function(props, context) {
+  var plugins = require('../../modules/plugin-store').plugins
+  if (props.plugins) plugins = plugins.concat(props.plugins);    
   if (props.pluginState && props.name) {
     const thisPluginState = props.pluginState[props.name];
     let renderedPlugins = plugins
@@ -11,15 +11,13 @@ const PanelLayoutPluginRenderer = function(props, context) {
       .map((plugin, i) => {
         let PluginElem = plugin.pluginComponent; 
         return (
-          <Panel header={plugin.pluginMetadata.displayName} key={i} eventKey={i} bsStyle="primary">
-            <PluginElem />
-          </Panel>
+          <PluginElem key={i}/>          
         )
       })
     return (
-      <div>
+      <Form inline>
         { renderedPlugins }
-      </div>
+      </Form>
     )
   }  else {
     return (
@@ -30,4 +28,4 @@ const PanelLayoutPluginRenderer = function(props, context) {
   }
 };
 
-export default PanelLayoutPluginRenderer;
+export default FormLayoutPluginRenderer;

@@ -1,26 +1,26 @@
 <rt-import name="*" as="RB" from="react-bootstrap"/>
 <RB.Form inline>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineAddress1">
     <RB.ControlLabel>Address1</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Address1" />
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineAddress2">
     <RB.ControlLabel>Address2</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Address2" />
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineAddress3">
     <RB.ControlLabel>Address3</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Address3" />
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineAddress4">
     <RB.ControlLabel>Address4</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Address4" />
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineAddress5">
     <RB.ControlLabel>Address5</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Address5" />
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlineCountry">
     <RB.ControlLabel>Country</RB.ControlLabel>
     <RB.FormControl componentClass="select" placeholder="Country">
       <option value="UK">UK</option>
@@ -28,7 +28,7 @@
       <option value="Other">Other</option>
     </RB.FormControl>
   </RB.FormGroup>
-  <RB.FormGroup controlId="formInlineName">
+  <RB.FormGroup controlId="formInlinePostcode">
     <RB.ControlLabel>Postcode</RB.ControlLabel>
     <RB.FormControl type="text" placeholder="Postcode" />
   </RB.FormGroup>

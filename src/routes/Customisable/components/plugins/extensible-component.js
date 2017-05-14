@@ -14,7 +14,7 @@ const extensibleComponent = function (ComponentToExtend, pluginName, LayoutPlugi
       const newProps = {
         name: pluginName
       }
-      return (
+      return (        
         <div>
           <ComponentToExtend {...this.props} />
           <LayoutPluginRenderer {...this.props} {...newProps} />
